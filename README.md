@@ -77,4 +77,4 @@ $ pnpm dep -v
 
 ## License
 
-MIT - see [LICSENSE.md](LICENSE.md)
+MIT - see [LICENSE.md](LICENSE.md)
