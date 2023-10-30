@@ -1,19 +1,14 @@
-# @gemstation/contracts-foundry
+# @quickdapp/contracts
 
-Example smart contracts repo for [Gemforge](https://gemforge.xyz) using [Foundry](https://github.com/foundry-rs/foundry).
+Companion smart contracts template repository for [QuickDapp](../QuickDapp/).
 
-This contains the optimal folder structure for use with Gemforge:
-
+* Fully upgradeable contracts using [EIP-2535 Diamond Standard](https://eips.ethereum.org/EIPS/eip-2535)
+* Full upgrade lifecycle management using [Gemforge](https://gemforge.xyz)
 * Build and deploy commands already setup
 * Pre-configured config file
 * Post-deploy hook for Etherscan verification
 
-There are two facets provided:
-
-* `ExampleFacet` - a simple example of a facet with a single function. Try adding and removing functions to/from this facet to see how the Gemforge deployment changes.
-* `ERC20Facet` - a complex example demonstrating how to deploy multiple separate ERC20s token contracts all internally backed by the same upgradeable diamond proxy ([read more](https://hiddentao.com/archives/2023/08/08/building-multiple-nft-and-erc-20-tokens-backed-by-a-single-upgradeable-smart-contract)).
-
-_Note: A Hardhat equivalent of this repo is available at https://github.com/gemstation/contracts-hardhat_
+This repo is a copy of the [official Gemforge scaffold](https://github.com/gemstation/contracts-foundry).
 
 ## Requirements
 
@@ -23,13 +18,7 @@ _Note: A Hardhat equivalent of this repo is available at https://github.com/gems
 
 ## Installation
 
-In an empty folder:
-
-```
-npx gemforge scaffold
-```
-
-Change into the folder and run in order:
+Install and setup:
 
 ```
 $ foundryup
