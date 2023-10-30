@@ -8,13 +8,6 @@ import "../shared/Structs.sol";
  */
 interface IERC20Facet {
   /**
-   * @dev Deploy new token.
-   * 
-   * @param config Token config.
-   */
-  function erc20DeployToken(ERC20TokenConfig memory config) external;
-
-  /**
    * @dev Returns the name of the token.
    */
   function erc20Name() external view returns (string memory);

@@ -6,7 +6,7 @@ import { IERC20Facet } from "../interfaces/IERC20Facet.sol";
 import { ERC20Token, ERC20TokenConfig } from "../shared/Structs.sol";
 import { LibERC20 } from "../libs/LibERC20.sol";
 import { AccessControl } from "../shared/AccessControl.sol";
-import { LibAppStorage } from "../libs/LibAppStorage.sol";
+import { LibAppStorage, AppStorage } from "../libs/LibAppStorage.sol";
 import { LibString } from "../libs/LibString.sol";
 
 error ERC20InvalidInput();
@@ -31,23 +31,38 @@ contract ERC20Facet is IERC20Facet, AccessControl {
     IERC20Facet interface implementation
   */
 
+  // Admin-level functions
 
-  function erc20DeployToken(ERC20TokenConfig memory config) isAdmin() external {
+  function erc20DeployToken(ERC20TokenConfig memory config) external isAdmin() {
     if (LibString.len(config.name) == 0 || LibString.len(config.symbol) == 0 || config.decimals == 0) {
       revert ERC20InvalidInput();
     }
 
     address token = address(new ERC20(this));
 
-    ERC20Token storage t = LibAppStorage.diamondStorage().erc20s[token];
+    AppStorage storage s = LibAppStorage.diamondStorage();
+
+    ERC20Token storage t = s.erc20s[token];
     t.name = config.name;
     t.symbol = config.symbol;
     t.decimals = config.decimals;
+    s.numERC20s++;
+    s.erc20Addresses[s.numERC20s] = token;
 
     LibERC20.mint(token, msg.sender, 100);
 
     emit ERC20NewToken(token);
   }
+
+  function getNumErc20s() external view returns (uint256) {
+    return LibAppStorage.diamondStorage().numERC20s;
+  }
+
+  function getErc20Address(uint256 index) external view returns (address) {
+    return LibAppStorage.diamondStorage().erc20Addresses[index];
+  }
+
+  // Functions for the ERC20 facade
 
   function erc20Name() external view returns (string memory) {
     return LibAppStorage.diamondStorage().erc20s[msg.sender].name;

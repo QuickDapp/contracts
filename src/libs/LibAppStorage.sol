@@ -8,13 +8,8 @@ struct AppStorage {
     uint256 reentrancyStatus;
     MetaTxContextStorage metaTxContext;
 
-    /*
-    TODO: Customize storage variables here
-
-    NOTE: Once contracts have been deployed you cannot modify the existing entries here. You can only append 
-    new entries. Otherwise, any subsequent upgrades you perform will break the memory structure of your 
-    deployed contracts.
-    */
+    uint numERC20s;
+    mapping(uint => address) erc20Addresses;
     mapping(address => ERC20Token) erc20s;
 }
 
