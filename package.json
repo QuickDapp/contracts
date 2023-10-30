@@ -4,8 +4,8 @@
   "description": "Gemforge diamond standard contracts scaffolding using Foundry.",
   "license": "MIT",
   "scripts": {
+    "prepare": "git submodule update --init --recursive && foundryup",
     "postinstall": "husky install",
-    "prepare": "foundryup && forge install foundry-rs/forge-std && git submodule update --init --recursive",
     "prettify": "prettier --write .",
     "devnet": "anvil",
     "clean": "forge clean",

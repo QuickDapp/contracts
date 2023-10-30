@@ -21,10 +21,7 @@ This repo is a copy of the [official Gemforge scaffold](https://github.com/gemst
 Install and setup:
 
 ```
-$ foundryup
-$ forge install foundry-rs/forge-std
 $ pnpm i
-$ git submodule update --init --recursive
 ```
 
 Create `.env` and set the following within:
