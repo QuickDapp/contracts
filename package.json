@@ -4,7 +4,8 @@
   "description": "Gemforge diamond standard contracts scaffolding using Foundry.",
   "license": "MIT",
   "scripts": {
-    "prepare": "husky install && npx husky add .husky/commit-msg 'npx commitlint --edit $1' && foundryup && forge install foundry-rs/forge-std && git submodule update --init --recursive",
+    "postinstall": "husky install && npx husky add .husky/commit-msg 'npx commitlint --edit $1'",
+    "prepare": "foundryup && forge install foundry-rs/forge-std && git submodule update --init --recursive",
     "prettify": "prettier --write .",
     "devnet": "anvil",
     "clean": "forge clean",
