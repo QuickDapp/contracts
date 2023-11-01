@@ -7,7 +7,7 @@
     "prepare": "git submodule update --init --recursive && foundryup",
     "postinstall": "husky install",
     "prettify": "prettier --write .",
-    "devnet": "anvil",
+    "devnet": "anvil --chain-id 1337",
     "clean": "forge clean",
     "test": "forge test -vv",
     "test-cov": "forge coverage -vv",
