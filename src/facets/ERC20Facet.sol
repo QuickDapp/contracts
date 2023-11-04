@@ -49,7 +49,7 @@ contract ERC20Facet is IERC20Facet, AccessControl {
     s.numERC20s++;
     s.erc20Addresses[s.numERC20s] = token;
 
-    LibERC20.mint(token, msg.sender, 100);
+    LibERC20.mint(token, msg.sender, 100 ether);
 
     emit ERC20NewToken(token);
   }
