@@ -33,7 +33,7 @@ contract ERC20Facet is IERC20Facet, AccessControl {
 
   // Admin-level functions
 
-  function erc20DeployToken(ERC20TokenConfig memory config) external isAdmin() {
+  function erc20DeployToken(ERC20TokenConfig memory config, uint initialBalance) external isAdmin() {
     if (LibString.len(config.name) == 0 || LibString.len(config.symbol) == 0 || config.decimals == 0) {
       revert ERC20InvalidInput();
     }
@@ -49,7 +49,7 @@ contract ERC20Facet is IERC20Facet, AccessControl {
     s.numERC20s++;
     s.erc20Addresses[s.numERC20s] = token;
 
-    LibERC20.mint(token, msg.sender, 100 ether);
+    LibERC20.mint(token, msg.sender, initialBalance);
 
     emit ERC20NewToken(token);
   }
