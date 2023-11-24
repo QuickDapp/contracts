@@ -1,6 +1,6 @@
 # @quickdapp/contracts
 
-Companion smart contracts template repository for [QuickDapp](../QuickDapp/).
+Companion smart contracts template repository for [QuickDapp](https://github.com/QuickDapp/QuickDapp).
 
 * Fully upgradeable contracts using [EIP-2535 Diamond Standard](https://eips.ethereum.org/EIPS/eip-2535)
 * Full upgrade lifecycle management using [Gemforge](https://gemforge.xyz)

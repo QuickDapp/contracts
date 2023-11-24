@@ -1,0 +1,1 @@
+exports.abi = require('./src/generated/abi.json')
