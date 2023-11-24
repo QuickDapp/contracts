@@ -22,7 +22,7 @@ Install and setup:
 
 ```
 $ pnpm i
-$ git submodule update --init --recursive
+$ pnpm setup
 ```
 
 Create `.env` and set the following within:
