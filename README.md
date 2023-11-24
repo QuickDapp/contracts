@@ -54,16 +54,18 @@ To run the tests:
 $ pnpm build
 ```
 
-To deploy to the local target:
+To deploy to local testnet:
 
 ```
 $ pnpm dep local
 ```
 
-To deploy to the testnet target (sepolia):
+To deploy to Sepolia:
 
 ```
-$ pnpm dep testnet
+$ export SEPOLIA_RPC_URL=".."
+$ export MNEMONIC=".."
+$ pnpm dep sepolia
 ```
 
 For verbose output simply add `-v`:

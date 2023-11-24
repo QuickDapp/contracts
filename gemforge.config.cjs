@@ -133,7 +133,7 @@ module.exports = {
       // Initialization function arguments
       initArgs: [],
     },
-    testnet: {
+    sepolia: {
       // Network to deploy to
       network: 'sepolia',
       // Wallet to use for deployment
