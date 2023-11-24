@@ -1,18 +1,18 @@
 {
   "name": "@quickdapp/contracts",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Companion smart contracts template package for QuickDapp web3 starter template.",
   "license": "MIT",
-  "main": "index.js",
   "files": [
-    "index.js",
-    "src",
+    "build",
     "README.md",
-    "LICENSE",
+    "LICENSE.md",
     "CHANGELOG.md",
     "package.json",
     "pnpm-lock.yaml"
   ],
+  "exports": "./build/index.js",
+  "types": "./build/index.d.ts",
   "scripts": {
     "setup": "git submodule update --init --recursive && foundryup && husky install",
     "prettify": "prettier --write .",
@@ -20,7 +20,7 @@
     "clean": "forge clean",
     "test": "forge test -vv",
     "test-cov": "forge coverage -vv",
-    "build": "gemforge build",
+    "build": "gemforge build && tsc",
     "dep": "gemforge deploy"
   },
   "devDependencies": {
@@ -35,7 +35,8 @@
     "solc": "^0.8.21",
     "solhint": "^3.3.7",
     "solidity-coverage": "^0.7.21",
-    "solidity-docgen": "^0.5.17"
+    "solidity-docgen": "^0.5.17",
+    "typescript": "^5.3.2"
   },
   "commitlint": {
     "extends": [
@@ -45,5 +46,8 @@
   "engines": {
     "node": ">=20.0.0"
   },
-  "engineStrict": true
+  "engineStrict": true,
+  "dependencies": {
+    "abitype": "^0.10.2"
+  }
 }
