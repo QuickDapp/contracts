@@ -18,11 +18,11 @@ This repo is a copy of the [official Gemforge scaffold](https://github.com/gemst
 
 ## Installation
 
-Install and setup:
+Install and bootstrap:
 
 ```
 $ pnpm i
-$ pnpm setup
+$ pnpm bootstrap
 ```
 
 Create `.env` and set the following within:

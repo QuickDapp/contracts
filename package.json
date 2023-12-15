@@ -15,7 +15,7 @@
   "exports": "./build/index.js",
   "types": "./build/index.d.ts",
   "scripts": {
-    "setup": "git submodule update --init --recursive && foundryup && husky install",
+    "bootstrap": "git submodule update --init --recursive && foundryup && husky install",
     "prettify": "prettier --write .",
     "devnet": "anvil --chain-id 1337 --block-time 5",
     "clean": "forge clean",
