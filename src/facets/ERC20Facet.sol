@@ -33,7 +33,7 @@ contract ERC20Facet is IERC20Facet, AccessControl {
 
   // Admin-level functions
 
-  function erc20DeployToken(ERC20TokenConfig memory config, uint initialBalance) external isAdmin() {
+  function erc20DeployToken(ERC20TokenConfig memory config, uint initialBalance) external {
     if (LibString.len(config.name) == 0 || LibString.len(config.symbol) == 0 || config.decimals == 0) {
       revert ERC20InvalidInput();
     }
