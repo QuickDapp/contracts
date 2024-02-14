@@ -26,8 +26,8 @@ devDependencies:
     specifier: ^8.0.1
     version: 8.0.1
   gemforge:
-    specifier: ^2.6.4
-    version: 2.6.4
+    specifier: ^2.7.0
+    version: 2.7.0
   husky:
     specifier: ^8.0.2
     version: 8.0.3
@@ -1058,6 +1058,12 @@ packages:
     resolution: {integrity: sha512-pHm4LsMJ6lzgNGVfZHjMoO8sdoRhOzOH4MLmY65Jg70bpxCKu5iOHNJyfF6OyvYw7t8Fpf35RuzUyqnQsj8Vig==}
     dev: true
 
+  /bigval@1.7.0:
+    resolution: {integrity: sha512-W3pnBspC4NM8lQsgyAyFWDdvFlSg7mVnH2mLks+n8nEzxRNovjeW3HJcVCRZGO2xdkYVe4gEStGTufImF+50vg==}
+    dependencies:
+      decimal.js: 10.4.3
+    dev: true
+
   /blakejs@1.2.1:
     resolution: {integrity: sha512-QXUSXI3QVc/gJME0dBpXrag1kbzOqCjCX8/b54ntNyW6sjtoqxqRk3LTmXzaJoh71zMsDCjM+47jS7XiwN/+fQ==}
     dev: true
@@ -1673,6 +1679,10 @@ packages:
   /decamelize@1.2.0:
     resolution: {integrity: sha512-z2S+W9X73hAUUki+N+9Za2lBlun89zigOyGrsax+KUQ6wKW4ZoWpEYBkGhQjwAjjDCkWxhY0VKEhk8wzY7F5cA==}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /decimal.js@10.4.3:
+    resolution: {integrity: sha512-VBBaLc1MgL5XpzgIP7ny5Z6Nx3UrRkIViUkPUdtl9aya5amy3De1gsUUSB1g3+3sExYNjCAsAznmukyxCb1GRA==}
     dev: true
 
   /decode-uri-component@0.2.2:
@@ -2330,12 +2340,13 @@ packages:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
     dev: true
 
-  /gemforge@2.6.4:
-    resolution: {integrity: sha512-82rIhbB2X4mrgZcSywMuelkfxiE6eeGaP1qyiGpvAq9cGR2YJOCsK532IJZ/nQCBF9uaRJM8t6fyaqkD1kosXw==}
+  /gemforge@2.7.0:
+    resolution: {integrity: sha512-xMX8uUURF/j2odhrVyIo5VGWSZr7CoNwKGs+g1WmApEjiX0T73VQjmicbTbw5j/6gjE/UUndh7QM7BIh3lvfmw==}
     engines: {node: '>=20.0.0'}
     hasBin: true
     dependencies:
       '@solidity-parser/parser': 0.16.1
+      bigval: 1.7.0
       chalk: 5.3.0
       commander: 11.0.0
       ethers: 6.7.1
