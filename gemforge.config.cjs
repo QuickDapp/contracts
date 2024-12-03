@@ -76,7 +76,7 @@ module.exports = {
     // shell command to execute before deploy
     preDeploy: "",
     // shell command to execute after deploy
-    postDeploy: "scripts/verify.js",
+    postDeploy: "",
   },
   // Wallets to use for deployment
   wallets: {
@@ -93,14 +93,12 @@ module.exports = {
       },
     },
     wallet2: {
-      // Wallet type - mnemonic
-      type: "mnemonic",
+      // Wallet type - private-key
+      type: "private-key",
       // Wallet config
       config: {
-        // Mnemonic phrase
-        words: () => process.env.MNEMONIC,
-        // 0-based index of the account to use
-        index: 0,
+        // Private key
+        key: () => process.env.PRIVATE_KEY,
       },
     },
   },
@@ -112,9 +110,18 @@ module.exports = {
       rpcUrl: "http://localhost:8545",
     },
     // Sepolia network
-    sepolia: {
+    baseSepolia: {
       // RPC endpoint URL
-      rpcUrl: () => process.env.SEPOLIA_RPC_URL,
+      rpcUrl: "https://sepolia.base.org",
+      contractVerification: {
+        // if using Foundry
+        foundry: {
+          // URL to block explorer contract source submission API
+          apiUrl: "https://api-sepolia.basescan.org/api",
+          // secret API key to use when submitting
+          apiKey: () => process.env.BASESCAN_API_KEY,
+        },
+      },
     },
   },
   // Targets to deploy
@@ -130,9 +137,9 @@ module.exports = {
       create3Salt:
         "0xde2f926c7dd655eb264988dcee29e9237ce8662868da5c82bb0988c159e5be55",
     },
-    sepolia: {
+    baseSepolia: {
       // Network to deploy to
-      network: "sepolia",
+      network: "baseSepolia",
       // Wallet to use for deployment
       wallet: "wallet2",
       // Initialization function arguments
@@ -142,4 +149,4 @@ module.exports = {
         "0xde2f926c7dd655eb264988dcee29e9237ce8662868da5c82bb0988c159e5be55",
     },
   },
-};
+}

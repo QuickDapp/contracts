@@ -22,7 +22,8 @@
     "test": "forge test -vv",
     "test-cov": "forge coverage -vv",
     "build": "gemforge build && tsc && cp ./src/generated/abi.json ./build/abi.json",
-    "dep": "gemforge deploy"
+    "dep": "gemforge deploy",
+    "verify": "gemforge verify"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.2.0",
@@ -30,7 +31,7 @@
     "@types/node": "^18.16.16",
     "dotenv": "^16.3.1",
     "execa": "^8.0.1",
-    "gemforge": "^2.7.0",
+    "gemforge": "^2.14.0",
     "husky": "^8.0.2",
     "prettier": "^2.8.8",
     "solc": "^0.8.21",
